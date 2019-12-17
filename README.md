@@ -18,10 +18,15 @@
       - register
           Upon form validation, add new user to database and redirect them to their new homepage
       - user
+            Searches database for user and returns their profile, including avatar and posts
       - edit_profile
+            Handles database updating of user information (about info and username)
       - follow
+            Allows a user to follow another user, updating both partys' followers/following information on their pages and updating the database
       - unfollow
+            Does the above but undoes a follow
       - explore
+            Collects recent posts from other users from database to display
 8. List of Views and their short description:
       - _post
           Handles displaying a user's username and avatar along with their post
@@ -42,5 +47,12 @@
       - user
           Login-required page for viewing a user's profile. Includes their personal bio, last login date/time, list of followers, and list of recent posts.
 9. List of Tables, their Structure and short description
-
+      - alembic_version
+            Stores current version number of migration
+      - followers
+            Holds user id's of who is following who
+      - post
+            Stores posts made by users, their id, post timestamp, and poster id
+      - user
+            Stores user information including username, email address, password hash, about info, and last login time
 10. References/Resources: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
